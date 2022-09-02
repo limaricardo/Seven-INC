@@ -1,17 +1,20 @@
 import React from 'react'
 import { useField } from 'formik'
+import { ContainerField, InputField, LabelInput } from '../Field/styles';
 
-const Field = ({ label, component: InputComponent, ...props }) => {
+const Field = ({ children, isValid, label, ...props }) => {
   
   const [inputProps, meta] = useField(props);
   const id = props.id || props.name
   
   return (
-    <>
-      {label && <label htmlFor={id}>{label}</label>}
-      <InputComponent id={id} {...inputProps} {...props} />
-      {meta.error && meta.touched && <div>{meta.error.toString()}</div>}
-    </>
+    <ContainerField>
+      <LabelInput>
+        {label && <label htmlFor={id}>{label}</label>}
+        <InputField id={id} {...inputProps} {...props} />
+      </LabelInput>
+      {meta.error && <div>{meta.error.toString()}</div>}
+    </ContainerField>
   );
 };
 

@@ -1,11 +1,12 @@
 import React from "react";
+import { ButtonComp } from "./styles";
 
 const Button = ({children,...props}) => {
   return (
     <div>
-      <button {...props}>
+      <ButtonComp {...props}>
         {children}
-      </button>
+      </ButtonComp>
     </div>
   );
 };

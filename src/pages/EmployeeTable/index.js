@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import EditButton from "../../components/UI/EditButton";
 import {STable, STHead, STHeadTR, STH, STBody, STBodyTR, STD } from './styles'
+
+import EditButton from "../../components/UI/EditButton";
+import Button from '../../components/UI/Button'
 
 const keysArray = ["nome", "email", "telefone", "contratacao"]
 
@@ -35,9 +37,9 @@ const EmployeeTable = ({data}) => {
               const value = obj[item];
               return <STD key={index}>{value}</STD>
             })}
-            <STD><button>+ info</button></STD>
+            <STD><Button>+ info</Button></STD>
             <STD><EditButton></EditButton></STD>
-            <STD><button onClick={(e) => handleDelete(index)}>Delete</button></STD>
+            <STD><Button onClick={(e) => handleDelete(index)}>Delete</Button></STD>
           </STBodyTR>
         ))}
       </STBody>

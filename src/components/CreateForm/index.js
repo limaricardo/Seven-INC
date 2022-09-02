@@ -1,73 +1,13 @@
-import React from "react";
-import { Formik, Form } from "formik";
-import schema from "./schema";
-import "./styles.js";
+import React from 'react'
+import FormComp from '../UI/Form';
+import schema from './schema';
 
-import Field from '../UI/Field'
-
-const keysArrayForm = [
-  "nome",
-  "cpf",
-  "email",
-  "telefone",
-  "dataNascimento",
-  "salario",
-];
-
-const typesArrayForm = [
-  "nome",
-  "cpf",
-  "email",
-  "telefone",
-  "dataNascimento",
-  "salario",
-];
-
-function FormComp({ labelQuantity, ...props }) {
-  function onSubmit(values, actions) {
-    console.log("SUBMIT", values);
-  }
-
+const CreateForm = () => {
   return (
-    <div className="Form">
-      <Formik
-        validationSchema={schema}
-        onSubmit={onSubmit}
-        validateOnMount
-        initialValues={{
-          nome: "",
-          cpf: "",
-          email: "",
-          telefone: "",
-          dataNascimento: "",
-          salario: "",
-        }}
-      >
-        {({ values, errors, touched, isValid }) => (
-          <Form>
-            {keysArrayForm.map((key) => {
-              return (
-                <div>
-                  <Field
-                    id={key}
-                    name={key}
-                    type="text"
-                    label={key}
-                  />
-                  {/* <label htmlFor={key}>{key}</label>
-                  <Field id={key} name={key} type="text" />
-                  <ErrorMessage name={key} /> */}
-                </div>
-              );
-            })}
-            <button type="submit" disabled={!isValid}>
-              Criar
-            </button>
-          </Form>
-        )}
-      </Formik>
+    <div>
+      <FormComp schema={schema}>Criar</FormComp>
     </div>
-  );
+  )
 }
 
-export default FormComp;
+export default CreateForm;
