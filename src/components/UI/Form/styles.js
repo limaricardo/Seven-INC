@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export const ContainerField = styled.div`
+export const FieldContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
   border: none;
-  width: 200px;
+  width: 350px;
   border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow)
+  box-shadow: var(--box-shadow);
+  background-color: white;
 `
+

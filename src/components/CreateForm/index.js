@@ -5,7 +5,7 @@ import schema from './schema';
 const CreateForm = () => {
   return (
     <div>
-      <FormComp schema={schema}>Criar</FormComp>
+      <FormComp legend={"* - Preencher campo obrigatório."} schema={schema}>Criar</FormComp>
     </div>
   )
 }

@@ -16,7 +16,6 @@ function App() {
         <EmployeeTable data={data} />
       </div> */}
       <CreateForm />
-      <EditForm />
       {/* <EditEmployeeForm data={data}></EditEmployeeForm> */}
     </ThemeProvider> 
   );

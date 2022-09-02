@@ -1,13 +1,22 @@
 import styled from "styled-components";
 
 
-export const ContainerField = styled.div`
+export const FieldContainer = styled.div`
   display: flex;
   align-items: flex-end;
 `
 
-export const InputField = styled.input`
+export const FieldInputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const FieldInput = styled.input`
   margin: 5px 0;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  height: 30px;
 `
 
 export const LabelInput = styled.div`
@@ -15,3 +24,4 @@ export const LabelInput = styled.div`
   flex-direction: column;
   align-items: left;
 `
+

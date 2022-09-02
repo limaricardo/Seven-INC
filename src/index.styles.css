@@ -8,6 +8,8 @@
 body {
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.4px;
+  background-color: #D9D9D9;
+  height: 100%;
 }
 
 :root {
@@ -16,7 +18,9 @@ body {
   --bg2: rgb(237, 237, 237);
   --bg3: rgb(214, 214, 214);
   --text: rgb(33, 33, 33);
-  --primary: rgb(224, 132, 209);
+  --primary: rgb(34, 48, 90);
+  --secondary: rgb(248, 191, 25);
+  --button-hover: #0e74a5;
 
   --border-radius: 8px;
 

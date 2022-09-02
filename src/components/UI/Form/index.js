@@ -4,7 +4,7 @@ import "./styles.js";
 
 import Field from '../../UI/Field'
 import Button from '../../UI/Button'
-import { ContainerField } from "./styles.js";
+import { FieldContainer } from "./styles.js";
 
 const keysArrayForm = [
   "nome",
@@ -24,7 +24,7 @@ const typesArrayForm = [
   "salario",
 ];
 
-function FormComp({ children, schema, ...props }) {
+function FormComp({ legend, children, schema, ...props }) {
   function onSubmit(values, actions) {
     console.log("SUBMIT", values);
   }
@@ -45,7 +45,7 @@ function FormComp({ children, schema, ...props }) {
         }}
       >
         {({ values, errors, touched, isValid }) => (
-          <ContainerField>
+          <FieldContainer>
             <Form>
             {keysArrayForm.map((key) => {
               return (
@@ -59,11 +59,12 @@ function FormComp({ children, schema, ...props }) {
                 </div>
               );
             })}
+            {legend && <p style={{fontSize: "12px", marginTop: "15px"}}>{legend}</p>}
             <Button type="submit" disabled={!isValid}>
               {children}
             </Button>
           </Form>
-          </ContainerField>
+          </FieldContainer>
         )}
       </Formik>
     </div>
