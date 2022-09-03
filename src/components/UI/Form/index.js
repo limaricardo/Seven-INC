@@ -4,7 +4,7 @@ import "./styles.js";
 
 import Field from '../../UI/Field'
 import Button from '../../UI/Button'
-import { FieldContainer } from "./styles.js";
+import { FieldContainer, ButtonContainerDiv } from "./styles.js";
 
 const keysArrayForm = [
   "nome",
@@ -44,12 +44,13 @@ function FormComp({ legend, children, schema, ...props }) {
           salario: "",
         }}
       >
-        {({ values, errors, touched, isValid }) => (
+        {({ isValid }) => (
           <FieldContainer>
-            <Form>
-            {keysArrayForm.map((key) => {
+            <Form style={{width: "100%", padding: "25px", textAlign: "center"}}>
+            <h2>{props.title}</h2>
+            {keysArrayForm.map((key, index) => {
               return (
-                <div>
+                <div key={index}>
                   <Field
                     id={key}
                     name={key}
@@ -60,9 +61,11 @@ function FormComp({ legend, children, schema, ...props }) {
               );
             })}
             {legend && <p style={{fontSize: "12px", marginTop: "15px"}}>{legend}</p>}
-            <Button type="submit" disabled={!isValid}>
-              {children}
-            </Button>
+            <ButtonContainerDiv> 
+              <Button style={{height: "30px"}} type="submit" disabled={!isValid}>
+                {children}
+              </Button>
+            </ButtonContainerDiv>            
           </Form>
           </FieldContainer>
         )}

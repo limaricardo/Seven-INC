@@ -2,12 +2,12 @@ import React from 'react'
 import FormComp from '../UI/Form';
 import schema from './schema'
 
-const CreateForm = () => {
+const EditForm = () => {
   return (
     <div>
-      <FormComp schema={schema}>Editar</FormComp>
+      <FormComp title={"Editar informações do funcionário"} schema={schema}>Editar</FormComp>
     </div>
   )
 }
 
-export default CreateForm;
+export default EditForm;

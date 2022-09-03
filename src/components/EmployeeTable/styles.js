@@ -20,7 +20,6 @@ export const STHeadTR = styled.tr`
 `;
 
 export const STH = styled.th`
-  font-weight: normal;
   padding: ${v.smSpacing};
   color: ${({ theme }) => theme.text};
   text-transform: capitalize;
@@ -31,7 +30,7 @@ export const STH = styled.th`
     border-right: 1px solid ${({ theme }) => theme.bg2};
   }
   :first-of-type {
-    width: 1%;
+    width: 30px;
     white-space: nowrap;
   }
 `;

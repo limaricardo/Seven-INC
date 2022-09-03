@@ -16,13 +16,12 @@ const Field = ({ children, isValid, label, ...props }) => {
   return (
     <FieldContainer>
       <LabelInput>
-        {label && <label htmlFor={id}>{firstLetterLabelCap}</label>}
-        <FieldInputContainer>
-          <FieldInput id={id} placeholder={firstLetterLabelCap} {...inputProps} {...props} />
-          {meta.error && <div style={{color: "red"}}>{meta.error.toString()}</div>}
-        </FieldInputContainer>
+          {label && <label htmlFor={id}>{firstLetterLabelCap}</label>}
+          {meta.error && <div style={{fontSize: "10px", color: "red", marginLeft: "5px"}}>{meta.error.toString()}</div>}
       </LabelInput>
-      
+      <FieldInputContainer>
+        <FieldInput id={id} placeholder={firstLetterLabelCap} {...inputProps} {...props} />
+      </FieldInputContainer>
     </FieldContainer>
   );
 };
