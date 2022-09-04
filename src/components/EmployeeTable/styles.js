@@ -9,23 +9,27 @@ export const STable = styled.table`
   border-radius: ${v.borderRadius};
   overflow: hidden;
 
-
   @media only screen and (max-width: 599px) {
     display: flex;
     justify-content: center;
+    border-radius: 0px;
   }
 `;
+
 
 export const STHead = styled.thead`
   position: sticky;
   z-index: 100;
+
   @media only screen and (max-width: 599px) {
     display: block;
   }
 `;
 
+
 export const STHeadTR = styled.tr`
   background: ${({ theme }) => theme.bg};
+
   @media only screen and (max-width: 599px) {
     display: block;
     margin: 0 0 1rem 0;
@@ -36,6 +40,7 @@ export const STHeadTR = styled.tr`
     left: -9999px;
   }
 `;
+
 
 export const STH = styled.th`
   padding: ${v.smSpacing};
@@ -52,23 +57,22 @@ export const STH = styled.th`
     white-space: nowrap;
   }
 
-
   @media only screen and (max-width: 599px) {
     display: block;
   }
 `;
+
 
 export const STBody = styled.tbody`
 
-
   @media only screen and (max-width: 599px) {
     display: block;
   }
 `;
 
+
 export const STBodyTR = styled.tr`
   background: ${({ theme }) => theme.white};
-
 
   @media only screen and (max-width: 599px) {
     display: block;
@@ -76,20 +80,27 @@ export const STBodyTR = styled.tr`
   }
 `;
 
+
 export const STD = styled.td`
   padding: ${v.smSpacing};
   border: 1px solid ${({ theme }) => theme.bg2};
   font-size: 14px;
 
   
+  @media only screen and (max-width: 395px) {
+    font-size: .75rem;
+  }
+  
   @media only screen and (max-width: 599px) {
     display: block;
+    font-size: .9rem;
 
     /* Behave  like a "row" */
     border: none;
     border-bottom: 1px solid #eee;
     position: relative;
     padding-left: 200px;
+    height: 40px;
 
     &:nth-of-type(1):before{
       content: "#";
@@ -120,7 +131,6 @@ export const STD = styled.td`
       /* Now like a table header */
 			position: absolute;
 			/* Top/left values mimic padding */
-			top: 0;
 			left: 6px;
 			width: 45%;
 			padding-right: 10px;

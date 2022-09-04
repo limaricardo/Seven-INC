@@ -24,6 +24,10 @@ export const FieldInput = styled.input`
   &:focus {
     outline: 1px solid black;
   }
+
+  @media only screen and (max-width: 599px) {
+    height: 35px;
+  }
 `
 
 export const LabelInput = styled.div`
@@ -32,5 +36,9 @@ export const LabelInput = styled.div`
   justify-content: center;
   font-size: 0.9rem;
   margin-top: 15px;
+
+  @media only screen and (max-width: 599px) {
+    margin-top: 5px;
+  }
 `
 

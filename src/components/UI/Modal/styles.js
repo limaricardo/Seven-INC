@@ -25,4 +25,9 @@ export const ModalContainer = styled.div`
   border-radius: 5px;
   box-shadow: 2px 2px 2px var(--primary);
   padding: 10px 10px 0 0;
+
+  @media only screen and (max-width: 395px) {
+    width: 300px; 
+    font-size: .9rem;
+  }
 `

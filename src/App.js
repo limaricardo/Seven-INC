@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components'
 import { lightTheme } from './components/UI/StylesGeneral/theme';
-import './index.styles.css'
+import './components/UI/StylesGeneral/index.styles.css'
 import RoutesComp from './routes';
 import {dataMock} from './components/Mock'
 
