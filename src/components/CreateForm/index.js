@@ -2,10 +2,21 @@ import React from 'react'
 import FormComp from '../UI/Form';
 import schema from './schema';
 
+const initialValues = {
+    id: "",
+    nome: "",
+    cpf: "",
+    email: "",
+    telefone: "",
+    dataNascimento: "",
+    salario: "",
+    dataContratacao: "",
+}
+
 const CreateForm = () => {
   return (
     <div>
-      <FormComp title={"Cadastro de funcionário"} legend={"* - Preencher campo obrigatório."} schema={schema}>Criar</FormComp>
+      <FormComp initialValues={initialValues} title={"Cadastro de funcionário"}  legend={"* - Preencher campo obrigatório."} schema={schema}>Criar</FormComp>
     </div>
   )
 }

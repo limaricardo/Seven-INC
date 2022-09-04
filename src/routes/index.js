@@ -10,7 +10,7 @@ const RoutesComp = ({data}) => {
         <Routes>
           <Route exact path="/" element={<AllEmployees data={data}/>}></Route>
           <Route path="/create" element={<CreateEmployee />}></Route>
-          <Route path="/edit" element={<EditEmployee />}></Route>
+          <Route path="/edit/:id" element={<EditEmployee />}></Route>
         </Routes>
       </BrowserRouter>
     </>

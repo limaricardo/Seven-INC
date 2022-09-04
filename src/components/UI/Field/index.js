@@ -7,12 +7,12 @@ const Field = ({ children, isValid, label, ...props }) => {
   const [inputProps, meta] = useField(props);
   const id = props.id || props.name
 
-  if(label === "dataNascimento") {
-    label = "Data de Nascimento"
+ if(label === "salario") {
+    label = "Salário"
   }
   
   const firstLetterLabelCap = (label[0].toUpperCase() + label.slice(1)) 
-
+ 
   return (
     <FieldContainer>
       <LabelInput>

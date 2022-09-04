@@ -1,11 +1,12 @@
 import React from 'react'
 import FormComp from '../UI/Form';
-import schema from './schema'
+import schema from './schema';
 
-const EditForm = () => {
+const EditForm = ({employee}) => {
+
   return (
     <div>
-      <FormComp title={"Editar informações do funcionário"} schema={schema}>Editar</FormComp>
+      <FormComp initialValues={employee} legend={"* - Preencher campo obrigatório."} title={"Editar informações do funcionário"} schema={schema}>Editar</FormComp>
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const ModalWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -10,7 +9,7 @@ export const ModalWrapper = styled.div`
   background: rgba(0, 0, 0, 0.3);
   z-index: 200;
   text-align: right;
-`
+`;
 
 export const ModalContainer = styled.div`
   display: flex;
@@ -27,12 +26,12 @@ export const ModalContainer = styled.div`
   padding: 10px 10px 0 0;
 
   @media only screen and (max-width: 599px) {
-    width: 90vw; 
-    font-size: .9rem;
+    width: 90vw;
+    font-size: 0.9rem;
   }
 
   @media only screen and (max-width: 395px) {
-    font-size: .8rem;
+    font-size: 0.8rem;
     height: 60vh;
   }
-`
+`;

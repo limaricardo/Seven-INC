@@ -1,21 +1,37 @@
-import React from "react";
-import { useState } from "react";
-import { STable, STHead, STHeadTR, STH, STBody, STBodyTR, STD } from "./styles";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import OpenInFullIcon from '@mui/icons-material/OpenInFull'
 
-import OpenInFullIcon from '@mui/icons-material/OpenInFull';
-import { Link } from "react-router-dom";
 import MoreInfo from "../MoreInfo";
+import PaginationSelector from "../UI/PaginationComponent/PaginationSelector";
+import PaginationComponent from "../UI/PaginationComponent/PaginationComponent";
+import { keysArrayTable, keysArrayTableFormatted } from "../Mock";
+import { STable, STHead, STHeadTR, STH, STBody, STBodyTR, STD } from "./styles";
 
-const keysArray = ["nome", "email", "telefone", "dataContratacao"];
 
 const EmployeeTable = ({ data }) => {
   const [dados, setDados] = useState(data);
   const [showModal, setShowModal] = useState(false);
-
   const [emailId, setEmailId] = useState('')
+
+  const [dataPerPage, setDataPerPage] = useState(10)
+  const [currentPage, setCurrentPage] = useState(0)
+
+  const pages = Math.ceil(dados.length / dataPerPage)
+  const startIndex = currentPage * dataPerPage
+  const endIndex = startIndex + dataPerPage
+  const currentDados = dados.slice(startIndex, endIndex)
+  const customIndex = currentPage * dataPerPage + 1
+
+  useEffect(() => {
+    setCurrentPage(0)
+  }, [dataPerPage])
+
+
+
 
   const handleDelete = (index) => {
     if (index >= 0) {
@@ -33,7 +49,7 @@ const EmployeeTable = ({ data }) => {
       <STable>
         <STHead>
           <STHeadTR>
-            {["#", ...keysArray, "Mais Info", "Editar", "Deletar"].map(
+            {["#", ...keysArrayTableFormatted, "Mais Info", "Editar", "Deletar"].map(
               (item, index) => (
                 <STH key={index}>{item}</STH>
               )
@@ -41,10 +57,10 @@ const EmployeeTable = ({ data }) => {
           </STHeadTR>
         </STHead>
         <STBody>
-          {dados.map((obj, index) => (
+          {currentDados.map((obj, index) => (
             <STBodyTR key={index} id={obj["email"]}>
-              <STD>{index + 1}</STD>
-              {keysArray.map((item, index) => {
+              <STD>{index + customIndex}</STD>
+              {keysArrayTable.map((item, index) => {
                 const value = obj[item];
                 return <STD key={index}>{value}</STD>;
               })}
@@ -57,7 +73,7 @@ const EmployeeTable = ({ data }) => {
                 </Link>
               </STD>
               <STD>
-                <Link to="/edit" className="edit">
+                <Link to={`/edit/${obj.id}`} className="edit">
                   <EditIcon style={{ height: "20px" }} />
                 </Link>
               </STD>
@@ -74,6 +90,8 @@ const EmployeeTable = ({ data }) => {
         </STBody>
       </STable>
       <MoreInfo data={data} emailId={emailId} showModal={showModal} setShowModal={setShowModal} />
+      <PaginationSelector setItensPerPage={setDataPerPage} itensPerPage={dataPerPage} />
+      <PaginationComponent currentPage={currentPage} setCurrentPage={setCurrentPage} pages={pages} />
     </>
   );
 };

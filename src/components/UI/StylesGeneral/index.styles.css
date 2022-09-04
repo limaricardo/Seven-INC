@@ -48,5 +48,32 @@ a:hover {
   color: red;
 }
 
+.MuiTextField-root input {
+  height: 30px;
+  padding: 0;
+  border-radius: 3px;
+  text-indent: 10px;
+  font-size: 0.8rem;
+  margin: 5px 0;
+  font-family: "Poppins", sans-serif;
+}
 
+.MuiTextField-root .MuiFormControl-root:focus {
+  outline: 1px solid black;
+}
 
+.label-date-picker {
+  text-align: left;
+  font-size: 0.88rem;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.i-mask {
+  margin: 5px 0;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  height: 40px;
+  text-indent: 10px;
+}

@@ -2,17 +2,7 @@ import React from "react";
 import Modal from "../UI/Modal";
 import Button from "../UI/Button";
 import { InfoContainer, InfoDiv, Text } from "./styles";
-
-const keysArrayForm = [
-  "Id",
-  "Nome",
-  "CPF",
-  "Email",
-  "Telefone",
-  "Data de Nascimento",
-  "Salário",
-  "Data de Contratação"
-];
+import { keysArrayFormFormatted } from '../Mock'
 
 const MoreInfo = ({ data, emailId, showModal, setShowModal }) => {
   const renderedList = data
@@ -26,7 +16,7 @@ const MoreInfo = ({ data, emailId, showModal, setShowModal }) => {
   let dataKeys = [];
 
   data.map((item) => {
-    dataKeys.push(Object.keys(item));
+    return dataKeys.push(Object.keys(item));
   });
 
   return (
@@ -43,11 +33,11 @@ const MoreInfo = ({ data, emailId, showModal, setShowModal }) => {
         </h2>
         <InfoContainer>
           {renderedList[0] &&
-            keysArrayForm.map((item, index) => {
+            keysArrayFormFormatted.map((item, index) => {
               const value = renderedList[0][dataKeys[0][index]];
               return (
                 <InfoDiv key={index}>
-                  <Text>{keysArrayForm[index]}:</Text>
+                  <Text>{keysArrayFormFormatted[index]}:</Text>
                   <Text>{value}</Text>
                 </InfoDiv>
               );

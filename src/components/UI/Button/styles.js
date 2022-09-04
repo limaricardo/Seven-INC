@@ -8,7 +8,7 @@ export const ButtonComp = styled.button`
   border: none;
   width: fit-content;
   cursor: pointer;
-  
+
   &:disabled {
     background-color: lightgray;
     color: white;
@@ -16,6 +16,5 @@ export const ButtonComp = styled.button`
   &:hover:not(:disabled) {
     background-color: var(--light-blue-hover);
     transition: all 0.3s ease-in-out 0s;
-  
   }
-`
+`;
