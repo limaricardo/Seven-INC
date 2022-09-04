@@ -7,9 +7,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import OpenInFullIcon from '@mui/icons-material/OpenInFull';
 import { Link } from "react-router-dom";
-import MoreInfoButton from "../MoreInfoButton";
+import MoreInfo from "../MoreInfo";
 
-const keysArray = ["nome", "email", "telefone", "contratacao"];
+const keysArray = ["nome", "email", "telefone", "dataContratacao"];
 
 const EmployeeTable = ({ data }) => {
   const [dados, setDados] = useState(data);
@@ -73,7 +73,7 @@ const EmployeeTable = ({ data }) => {
           ))}
         </STBody>
       </STable>
-      <MoreInfoButton data={data} emailId={emailId} showModal={showModal} setShowModal={setShowModal} />
+      <MoreInfo data={data} emailId={emailId} showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 };

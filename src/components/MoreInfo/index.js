@@ -11,9 +11,10 @@ const keysArrayForm = [
   "Telefone",
   "Data de Nascimento",
   "Salário",
+  "Data de Contratação"
 ];
 
-const MoreInfoButton = ({ data, emailId, showModal, setShowModal }) => {
+const MoreInfo = ({ data, emailId, showModal, setShowModal }) => {
   const renderedList = data
     .filter((item) => {
       return emailId === item.email;
@@ -44,7 +45,6 @@ const MoreInfoButton = ({ data, emailId, showModal, setShowModal }) => {
           {renderedList[0] &&
             keysArrayForm.map((item, index) => {
               const value = renderedList[0][dataKeys[0][index]];
-              console.log(item)
               return (
                 <InfoDiv key={index}>
                   <Text>{keysArrayForm[index]}:</Text>
@@ -58,4 +58,4 @@ const MoreInfoButton = ({ data, emailId, showModal, setShowModal }) => {
   );
 };
 
-export default MoreInfoButton;
+export default MoreInfo;

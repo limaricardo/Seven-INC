@@ -18,16 +18,21 @@ export const ModalContainer = styled.div`
   position: absolute;
   top: 25%;
   left: 50%;
-  height: 60vh;
-  width: 400px;
+  height: 50vh;
+  width: 600px;
   transform: translate(-50%, -25%);
   background: white;
   border-radius: 5px;
   box-shadow: 2px 2px 2px var(--primary);
   padding: 10px 10px 0 0;
 
-  @media only screen and (max-width: 395px) {
-    width: 300px; 
+  @media only screen and (max-width: 599px) {
+    width: 90vw; 
     font-size: .9rem;
+  }
+
+  @media only screen and (max-width: 395px) {
+    font-size: .8rem;
+    height: 60vh;
   }
 `

@@ -8,7 +8,8 @@ export const Header = styled.header`
   height: 8vh;
   background-color: white;
 
-  @media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 395px) {
+    font-size: 0.8rem;
   }
 
 `
@@ -20,7 +21,7 @@ export const Nav = styled.nav`
   align-items: center;
   gap: 400px;
 
-  @media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 780px) {
     gap: 0px;
     justify-content: space-evenly;
   }
@@ -31,11 +32,15 @@ export const DivNav = styled.div`
   justify-content: flex-end;
   gap: 100px;
 
-  @media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 780px) {
     gap: 50px;
   }
 `
 
 export const Image = styled.img`
   width: 150px;
+
+  @media only screen and (max-width: 395px) {
+    width: 100px;
+  }
 `

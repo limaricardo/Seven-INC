@@ -2,11 +2,11 @@ export const dataMock = [{
   id: "1",
   nome: "Ricardo",
   cpf: "123.456.789-10",
-  email: "ricardo@gmail.com",
+  email: "limapereiraricardo@gmail.com",
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },
 {
   id: "2",
@@ -16,7 +16,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },
 {
   id: "3",
@@ -26,7 +26,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },
 {
   id: "4",
@@ -36,7 +36,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },{
   id: "5",
   nome: "Romero",
@@ -45,7 +45,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },{
   id: "6",
   nome: "Pedro",
@@ -54,7 +54,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },{
   id: "7",
   nome: "Marcos",
@@ -63,7 +63,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },{
   id: "8",
   nome: "Lorenzo",
@@ -72,7 +72,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },{
   id: "9",
   nome: "Maria",
@@ -81,7 +81,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },{
   id: "10",
   nome: "Ana",
@@ -90,7 +90,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },{
   id: "11",
   nome: "Julia",
@@ -99,7 +99,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },{
   id: "12",
   nome: "Amanda",
@@ -108,7 +108,7 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },{
   id: "13",
   nome: "Matheus",
@@ -117,6 +117,6 @@ export const dataMock = [{
   telefone: "24 99408-0484",
   dataNascimento: "12/06/1995",
   salario: "2500",
-  contratacao: "12/06/1995"
+  dataContratacao: "12/06/1995"
 },
 ]

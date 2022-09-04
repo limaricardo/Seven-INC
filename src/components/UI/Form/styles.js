@@ -16,6 +16,11 @@ export const FieldContainer = styled.div`
     width: 90vw; 
     padding-top: 10px;
   }
+
+  @media only screen and (max-width: 395px) {
+    width: 90vw; 
+    font-size: 0.7rem;
+  }
 `
 
 export const ButtonContainerDiv = styled.div`

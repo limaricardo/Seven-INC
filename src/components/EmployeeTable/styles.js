@@ -9,7 +9,7 @@ export const STable = styled.table`
   border-radius: ${v.borderRadius};
   overflow: hidden;
 
-  @media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 780px) {
     display: flex;
     justify-content: center;
     border-radius: 0px;
@@ -21,7 +21,7 @@ export const STHead = styled.thead`
   position: sticky;
   z-index: 100;
 
-  @media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 780px) {
     display: block;
   }
 `;
@@ -30,7 +30,7 @@ export const STHead = styled.thead`
 export const STHeadTR = styled.tr`
   background: ${({ theme }) => theme.bg};
 
-  @media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 780px) {
     display: block;
     margin: 0 0 1rem 0;
 
@@ -57,7 +57,7 @@ export const STH = styled.th`
     white-space: nowrap;
   }
 
-  @media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 780px) {
     display: block;
   }
 `;
@@ -65,7 +65,7 @@ export const STH = styled.th`
 
 export const STBody = styled.tbody`
 
-  @media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 780px) {
     display: block;
   }
 `;
@@ -74,7 +74,7 @@ export const STBody = styled.tbody`
 export const STBodyTR = styled.tr`
   background: ${({ theme }) => theme.white};
 
-  @media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 780px) {
     display: block;
     margin: 0 0 1rem 0;
   }
@@ -86,12 +86,7 @@ export const STD = styled.td`
   border: 1px solid ${({ theme }) => theme.bg2};
   font-size: 14px;
 
-  
-  @media only screen and (max-width: 395px) {
-    font-size: .75rem;
-  }
-  
-  @media only screen and (max-width: 599px) {
+  @media only screen and (max-width: 780px) {
     display: block;
     font-size: .9rem;
 
@@ -99,7 +94,7 @@ export const STD = styled.td`
     border: none;
     border-bottom: 1px solid #eee;
     position: relative;
-    padding-left: 200px;
+    padding-left: 120px;
     height: 40px;
 
     &:nth-of-type(1):before{
@@ -115,7 +110,7 @@ export const STD = styled.td`
       content: "Telefone";
     }
     &:nth-of-type(5):before{
-      content: "Data de Nascimento";
+      content: "Data de Contratação";
     }
     &:nth-of-type(6):before{
       content: "Mais Informações";
@@ -138,4 +133,10 @@ export const STD = styled.td`
 		}
 
     }
+
+  @media only screen and (max-width: 395px) {
+    font-size: .75rem;
+  }
+  
+ 
 `;
