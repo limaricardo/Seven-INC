@@ -3,6 +3,15 @@ import Modal from "../UI/Modal";
 import Button from "../UI/Button";
 import { InfoContainer, InfoDiv, Text } from "./styles";
 
+const keysArrayForm = [
+  "Id",
+  "Nome",
+  "CPF",
+  "Email",
+  "Telefone",
+  "Data de Nascimento",
+  "Salário",
+];
 
 const MoreInfoButton = ({ data, emailId, showModal, setShowModal }) => {
   const renderedList = data
@@ -13,27 +22,36 @@ const MoreInfoButton = ({ data, emailId, showModal, setShowModal }) => {
       return item;
     });
 
-  let dataKeys = []
+  let dataKeys = [];
 
   data.map((item) => {
-    dataKeys.push(Object.keys(item))
-  })
-  
+    dataKeys.push(Object.keys(item));
+  });
+
   return (
     <div>
       <Modal showModal={showModal} setShowModal={setShowModal}>
-        <Button style={{color: "red", backgroundColor: "white", fontSize: "20px"}} onClick={() => setShowModal(false)}>X</Button>
-        <h2 style={{textAlign: "center"}}>Informações detalhadas do Funcionário</h2>
+        <Button
+          style={{ color: "red", backgroundColor: "white", fontSize: "20px" }}
+          onClick={() => setShowModal(false)}
+        >
+          X
+        </Button>
+        <h2 style={{ textAlign: "center" }}>
+          Informações detalhadas do Funcionário
+        </h2>
         <InfoContainer>
-          {renderedList[0] && data.map((item, index) => {
-            const value = renderedList[0][dataKeys[0][index]];
-            return (
-              <InfoDiv key={index}>
-                <Text>{dataKeys[0][index]}</Text>
-                <Text>{value}</Text>
-              </InfoDiv>
-            );
-          })}
+          {renderedList[0] &&
+            keysArrayForm.map((item, index) => {
+              const value = renderedList[0][dataKeys[0][index]];
+              console.log(item)
+              return (
+                <InfoDiv key={index}>
+                  <Text>{keysArrayForm[index]}:</Text>
+                  <Text>{value}</Text>
+                </InfoDiv>
+              );
+            })}
         </InfoContainer>
       </Modal>
     </div>

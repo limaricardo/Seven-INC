@@ -3,20 +3,23 @@ import styled from "styled-components";
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
   align-items: center;
-  padding-top: 50px;
-`
+  padding: 50px 0 0 80px;
+`;
 
 export const InfoDiv = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 50px;
-  width: 300px;
-`
+  justify-content: left;
+  width: 280px;
+  height: 50px;
+  align-items: space-between;
+`;
 export const Text = styled.div`
-  text-align: center;
   width: 100%;
-`
+  text-align: left;
+  &:first-child{
+    width: 120px;
+  }
+`;
+
+

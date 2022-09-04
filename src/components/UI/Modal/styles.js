@@ -13,10 +13,12 @@ export const ModalWrapper = styled.div`
 `
 
 export const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 25%;
   left: 50%;
-  height: 50vh;
+  height: 60vh;
   width: 400px;
   transform: translate(-50%, -25%);
   background: white;

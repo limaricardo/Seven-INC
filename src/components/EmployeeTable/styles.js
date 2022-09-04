@@ -8,15 +8,33 @@ export const STable = styled.table`
   text-align: center;
   border-radius: ${v.borderRadius};
   overflow: hidden;
+
+
+  @media only screen and (max-width: 599px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const STHead = styled.thead`
   position: sticky;
   z-index: 100;
+  @media only screen and (max-width: 599px) {
+    display: block;
+  }
 `;
 
 export const STHeadTR = styled.tr`
   background: ${({ theme }) => theme.bg};
+  @media only screen and (max-width: 599px) {
+    display: block;
+    margin: 0 0 1rem 0;
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
 `;
 
 export const STH = styled.th`
@@ -33,16 +51,81 @@ export const STH = styled.th`
     width: 30px;
     white-space: nowrap;
   }
+
+
+  @media only screen and (max-width: 599px) {
+    display: block;
+  }
 `;
 
-export const STBody = styled.tbody``;
+export const STBody = styled.tbody`
+
+
+  @media only screen and (max-width: 599px) {
+    display: block;
+  }
+`;
 
 export const STBodyTR = styled.tr`
   background: ${({ theme }) => theme.white};
+
+
+  @media only screen and (max-width: 599px) {
+    display: block;
+    margin: 0 0 1rem 0;
+  }
 `;
 
 export const STD = styled.td`
   padding: ${v.smSpacing};
   border: 1px solid ${({ theme }) => theme.bg2};
   font-size: 14px;
+
+  
+  @media only screen and (max-width: 599px) {
+    display: block;
+
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 200px;
+
+    &:nth-of-type(1):before{
+      content: "#";
+    }
+    &:nth-of-type(2):before{
+      content: "Nome";
+    }
+    &:nth-of-type(3):before{
+      content: "Email";
+    }
+    &:nth-of-type(4):before{
+      content: "Telefone";
+    }
+    &:nth-of-type(5):before{
+      content: "Data de Nascimento";
+    }
+    &:nth-of-type(6):before{
+      content: "Mais Informações";
+    }
+    &:nth-of-type(7):before{
+      content: "Editar";
+    }
+    &:nth-of-type(8):before{
+      content: "Deletar";
+    }
+
+    &:before{
+      /* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+
+    }
 `;
