@@ -5,12 +5,27 @@ import "./styles.js";
 import Field from "../Field";
 import Button from "../Button";
 import ViewsDatePicker from "../DatePicker";
-import { keysArrayForm } from "../../Mock";
+import { keysArrayForm, dataMock } from "../../Mock";
 import { FieldContainer, ButtonContainerDiv } from "./styles.js";
 
 function FormComp({ initialValues, legend, children, schema, ...props }) {
+  
   function onSubmit(values, actions) {
-    console.log("SUBMIT", values);
+    console.log(values)
+    let employeeIndex;
+
+    if (values?.id) {
+      employeeIndex = dataMock.findIndex(item => item.id === values.id);
+      if (employeeIndex)
+        dataMock[employeeIndex] = values;
+    }
+
+    if (!employeeIndex) {
+      dataMock.push({
+        id: +(dataMock[dataMock.length - 1]?.id || 1) + 1,
+        ...values
+      });
+    }
   }
 
   return (
@@ -20,8 +35,9 @@ function FormComp({ initialValues, legend, children, schema, ...props }) {
         onSubmit={onSubmit}
         validateOnMount
         initialValues={initialValues}
+        enableReinitialize
       >
-        {({ isValid }) => (
+        {({ isValid, setFieldValue }) => (
           <FieldContainer>
             <Form
               style={{ width: "100%", padding: "25px", textAlign: "center" }}
@@ -32,8 +48,16 @@ function FormComp({ initialValues, legend, children, schema, ...props }) {
                   <div key={index}>
                     {key === "dataContratacao" || key === "dataNascimento" ? (
                       <>
-                        <p className="label-date-picker">{key === "dataContratacao" ? key = "Data de Contratação" : key = "Data de Nascimento"}</p>
-                        <ViewsDatePicker dateValue={ key === "dataContratacao" ? initialValues.dataContratacao : initialValues.dataNascimento} />
+                        <p className="label-date-picker">
+                          {key === "dataContratacao"
+                            ? "Data de Contratação"
+                            : "Data de Nascimento"}
+                        </p>
+                        <ViewsDatePicker
+                          field={key}                          
+                          dateValue={ key === "dataContratacao" ? initialValues.dataContratacao : initialValues.dataNascimento }
+                          setFieldValue={setFieldValue}
+                        />
                       </>
                     ) : (
                       <Field id={key} name={key} type="text" label={key} />
@@ -45,8 +69,9 @@ function FormComp({ initialValues, legend, children, schema, ...props }) {
                 <p style={{ fontSize: "15px", marginTop: "15px" }}>{legend}</p>
               )}
               <ButtonContainerDiv>
-                <Button
-                  style={{ height: "30px" }}
+                <Button 
+                  disabled={!isValid}
+                  style={{ height: "30px" }} 
                   type="submit"
                 >
                   {children}

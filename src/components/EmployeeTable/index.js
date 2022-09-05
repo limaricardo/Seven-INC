@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import dayjs from "dayjs";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import OpenInFullIcon from '@mui/icons-material/OpenInFull'
@@ -17,7 +18,7 @@ const EmployeeTable = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
   const [emailId, setEmailId] = useState('')
 
-  const [dataPerPage, setDataPerPage] = useState(10)
+  const [dataPerPage, setDataPerPage] = useState(15)
   const [currentPage, setCurrentPage] = useState(0)
 
   const pages = Math.ceil(dados.length / dataPerPage)
@@ -31,11 +32,9 @@ const EmployeeTable = ({ data }) => {
   }, [dataPerPage])
 
 
-
-
   const handleDelete = (index) => {
     if (index >= 0) {
-      setDados(dados.filter((item, i) => i !== index));
+      setDados(dados.filter((item, i) =>  i !== customIndex + index - 1));
     }
   };
 
@@ -62,7 +61,7 @@ const EmployeeTable = ({ data }) => {
               <STD>{index + customIndex}</STD>
               {keysArrayTable.map((item, index) => {
                 const value = obj[item];
-                return <STD key={index}>{value}</STD>;
+                return <STD key={index}>{value instanceof dayjs ? value.format('DD/MM/YYYY') : value}</STD>;
               })}
               <STD>
                 <Link to="#">

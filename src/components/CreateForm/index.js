@@ -3,7 +3,6 @@ import FormComp from '../UI/Form';
 import schema from './schema';
 
 const initialValues = {
-    id: "",
     nome: "",
     cpf: "",
     email: "",
