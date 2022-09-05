@@ -1,32 +1,42 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 import "./styles.js";
 
 import Field from "../Field";
 import Button from "../Button";
 import ViewsDatePicker from "../DatePicker";
-import { keysArrayForm, dataMock } from "../../Mock";
+import { keysArrayForm } from "../../Mock";
 import { FieldContainer, ButtonContainerDiv } from "./styles.js";
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
+import { MockContext } from "../../../Context/index.js";
 
-function FormComp({ initialValues, legend, children, schema, toastText, ...props }) {
+
+function FormComp({initialValues, legend, children, schema, toastText, ...props}) {
 
   const navigate = useNavigate();
-  
-  function onSubmit(values, actions) {
+
+  const [dados, setDados] = useContext(MockContext)
+
+  function onSubmit(values) {
     let employeeIndex;
 
     if (values?.id) {
-      employeeIndex = dataMock.findIndex(item => item.id === values.id);
+      employeeIndex = dados.findIndex(item => item.id === values.id);
       if (employeeIndex >= 0)
-        dataMock[employeeIndex] = values;
+        setDados(prev => {
+          const _dados = [...prev];
+          _dados[employeeIndex] = values;
+          return _dados;
+        });
     }
 
     if (!employeeIndex && employeeIndex !== 0) {
-      dataMock.push({
-        id: +(dataMock[dataMock.length - 1]?.id || 1) + 1,
-        ...values
+      setDados(prev => {
+        return [...prev, {
+          id: (+(prev[prev.length - 1]?.id || 1) + 1) + '',
+          ...values
+        }]
       });
     }
 
@@ -66,8 +76,12 @@ function FormComp({ initialValues, legend, children, schema, toastText, ...props
                             : "Data de Nascimento"}
                         </p>
                         <ViewsDatePicker
-                          field={key}                          
-                          dateValue={ key === "dataContratacao" ? initialValues.dataContratacao : initialValues.dataNascimento }
+                          field={key}
+                          dateValue={
+                            key === "dataContratacao"
+                              ? initialValues.dataContratacao
+                              : initialValues.dataNascimento
+                          }
                           setFieldValue={setFieldValue}
                         />
                       </>
@@ -81,9 +95,9 @@ function FormComp({ initialValues, legend, children, schema, toastText, ...props
                 <p style={{ fontSize: "15px", marginTop: "15px" }}>{legend}</p>
               )}
               <ButtonContainerDiv>
-                <Button 
+                <Button
                   disabled={!isValid}
-                  style={{ height: "30px" }} 
+                  style={{ height: "30px" }}
                   type="submit"
                 >
                   {children}

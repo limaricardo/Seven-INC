@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import dayjs from "dayjs";
@@ -12,26 +12,32 @@ import PaginationComponent from "../UI/PaginationComponent/PaginationComponent";
 import { keysArrayTable, keysArrayTableFormatted } from "../Mock";
 import { STable, STHead, STHeadTR, STH, STBody, STBodyTR, STD } from "./styles";
 
+import { MockContext } from "../../Context";
 
-const EmployeeTable = ({ data }) => {
-  const [dados, setDados] = useState(data);
+
+const EmployeeTable = () => {
+  const [dados, setDados] = useContext(MockContext);
   const [showModal, setShowModal] = useState(false);
   const [infoId, setInfoID] = useState('')
 
+
+  // Table Pagination 
   const [dataPerPage, setDataPerPage] = useState(15)
   const [currentPage, setCurrentPage] = useState(0)
-
   const pages = Math.ceil(dados.length / dataPerPage)
   const startIndex = currentPage * dataPerPage
   const endIndex = startIndex + dataPerPage
   const currentDados = dados.slice(startIndex, endIndex)
   const customIndex = currentPage * dataPerPage + 1
 
+
+  // Start page everytime change the quantity of data per page
   useEffect(() => {
     setCurrentPage(0)
   }, [dataPerPage])
 
 
+  // Function to delete the row selected
   const handleDelete = (index) => {
     if (index >= 0) {
       setDados(dados.filter((item, i) =>  i !== customIndex + index - 1));
@@ -39,6 +45,7 @@ const EmployeeTable = ({ data }) => {
 
   };
 
+  // Function to open the modal with more details about the employee
   const onExpandClick = (obj) => {
     setShowModal(true)
     setInfoID(obj.id)
@@ -89,7 +96,7 @@ const EmployeeTable = ({ data }) => {
           ))}
         </STBody>
       </STable>
-      <MoreInfo data={data} infoId={infoId} showModal={showModal} setShowModal={setShowModal} />
+      <MoreInfo data={dados} infoId={infoId} showModal={showModal} setShowModal={setShowModal} />
       <PaginationSelector setItensPerPage={setDataPerPage} itensPerPage={dataPerPage} />
       <PaginationComponent currentPage={currentPage} setCurrentPage={setCurrentPage} pages={pages} />
     </>

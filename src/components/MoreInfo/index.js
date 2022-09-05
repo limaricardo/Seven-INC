@@ -2,10 +2,11 @@ import React from "react";
 import Modal from "../UI/Modal";
 import Button from "../UI/Button";
 import { InfoContainer, InfoDiv, Text } from "./styles";
-import { keysArrayFormFormatted } from '../Mock'
+import { keysArrayFormFormatted } from "../Mock";
 import dayjs from "dayjs";
 
 const MoreInfo = ({ data, infoId, showModal, setShowModal }) => {
+  // Return the object with the Id where the user clicked (row)
   const renderedList = data
     .filter((item) => {
       return infoId === item.id;
@@ -14,6 +15,7 @@ const MoreInfo = ({ data, infoId, showModal, setShowModal }) => {
       return item;
     });
 
+  // Keys array from data
   let dataKeys = [];
 
   data.map((item) => {
@@ -39,7 +41,11 @@ const MoreInfo = ({ data, infoId, showModal, setShowModal }) => {
               return (
                 <InfoDiv key={index}>
                   <Text>{keysArrayFormFormatted[index]}:</Text>
-                  <Text>{value instanceof dayjs ? value.format('DD/MM/YYYY') : value}</Text>
+                  <Text>
+                    {value instanceof dayjs
+                      ? value.format("DD/MM/YYYY")
+                      : value}
+                  </Text>
                 </InfoDiv>
               );
             })}

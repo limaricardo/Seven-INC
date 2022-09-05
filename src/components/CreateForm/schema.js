@@ -5,7 +5,7 @@ export default Yup.object().shape({
   cpf: Yup.number().typeError("Permitido apenas números").required('*'),
   email: Yup.string().email().required('*'),
   telefone: Yup.number().typeError("Permitido apenas números").required('*'),
-  dataNascimento: Yup.date().required('*'),
+  dataNascimento: Yup.string().required('*'),
   salario: Yup.number().typeError("Permitido apenas números").required('*'),
-  dataContratacao: Yup.date().required('*')
+  dataContratacao: Yup.string().required('*')
 });

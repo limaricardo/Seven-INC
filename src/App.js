@@ -1,25 +1,27 @@
-import RoutesComp from './routes';
-import {dataMock} from './components/Mock'
-import { ToastContainer } from 'react-toastify';
+import React, { useState } from "react";
 
-import 'react-toastify/dist/ReactToastify.css';
-import './components/UI/StylesGeneral/index.styles.css'
-import { lightTheme } from './components/UI/StylesGeneral/theme';
-import { ThemeProvider } from 'styled-components'
+import RoutesComp from "./routes";
+import { ToastContainer } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
+import "./components/UI/StylesGeneral/index.styles.css";
+import { lightTheme } from "./components/UI/StylesGeneral/theme";
+import { ThemeProvider } from "styled-components";
 
-const data = dataMock;
+import { MockContext } from "./Context";
+import { dataMock } from "./components/Mock";
 
 function App() {
-  
+  const [dados, setDados] = useState(dataMock);
+
   return (
     <ThemeProvider theme={lightTheme}>
-      <RoutesComp data={data}/>
-      <ToastContainer autoClose={4000} />
-    </ThemeProvider> 
+      <MockContext.Provider value={[dados, setDados]}>
+        <RoutesComp />
+        <ToastContainer autoClose={4000} />
+      </MockContext.Provider>
+    </ThemeProvider>
   );
 }
-
-
 
 export default App;

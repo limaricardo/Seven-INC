@@ -8,18 +8,20 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 import "../StylesGeneral/index.styles.css";
 
-function ViewsDatePicker({ field, dateValue, setFieldValue}) {
-  const [value, setValue] = React.useState(dayjs(dateValue));
+const dateFormat = 'DD/MM/YYYY';
+
+function ViewsDatePicker({ field, dateValue, setFieldValue }) {
+  const [value, setValue] = React.useState(dayjs(dateValue, dateFormat));
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Stack spacing={3}>
         <DatePicker
-          inputFormat="DD/MM/YYYY"
+          inputFormat={dateFormat}
           views={["day", "month", "year"]}
           value={value}
           onChange={(newValue) => {
-            setFieldValue(field, newValue, true)
+            setFieldValue(field, newValue?.format(dateFormat), true);
             setValue(newValue);
           }}
           renderInput={(params) => <TextField {...params} helperText={null} />}

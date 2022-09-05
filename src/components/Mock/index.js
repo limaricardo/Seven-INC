@@ -149,7 +149,7 @@ export const keysArrayForm = [
   "telefone",
   "dataNascimento",
   "salario",
-  "dataContratacao"
+  "dataContratacao",
 ];
 
 export const keysArrayTable = ["nome", "email", "telefone", "dataContratacao"];
@@ -158,5 +158,5 @@ export const keysArrayTableFormatted = [
   "Nome",
   "Email",
   "Telefone",
-  "Data de Contratação"
+  "Data de Contratação",
 ];

@@ -1,23 +1,31 @@
-import React from 'react'
-import FormComp from '../UI/Form';
-import schema from './schema';
+import React from "react";
+import FormComp from "../UI/Form";
+import schema from "./schema";
 
 const initialValues = {
-    nome: "",
-    cpf: "",
-    email: "",
-    telefone: "",
-    dataNascimento: "",
-    salario: "",
-    dataContratacao: "",
-}
+  nome: "",
+  cpf: "",
+  email: "",
+  telefone: "",
+  dataNascimento: "",
+  salario: "",
+  dataContratacao: "",
+};
 
 const CreateForm = () => {
   return (
     <div>
-      <FormComp initialValues={initialValues} title={"Cadastro de funcionário"}  legend={"* - Preencher campo obrigatório."} schema={schema} toastText={"Novo Funcionário cadastrado com sucesso!"}>Criar</FormComp>
+      <FormComp
+        initialValues={initialValues}
+        title={"Cadastro de funcionário"}
+        legend={"* - Preencher campo obrigatório."}
+        schema={schema}
+        toastText={"Novo Funcionário cadastrado com sucesso!"}
+      >
+        Criar
+      </FormComp>
     </div>
-  )
-}
+  );
+};
 
 export default CreateForm;
