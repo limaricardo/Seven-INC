@@ -3,11 +3,12 @@ import Modal from "../UI/Modal";
 import Button from "../UI/Button";
 import { InfoContainer, InfoDiv, Text } from "./styles";
 import { keysArrayFormFormatted } from '../Mock'
+import dayjs from "dayjs";
 
-const MoreInfo = ({ data, emailId, showModal, setShowModal }) => {
+const MoreInfo = ({ data, infoId, showModal, setShowModal }) => {
   const renderedList = data
     .filter((item) => {
-      return emailId === item.email;
+      return infoId === item.id;
     })
     .map((item) => {
       return item;
@@ -38,7 +39,7 @@ const MoreInfo = ({ data, emailId, showModal, setShowModal }) => {
               return (
                 <InfoDiv key={index}>
                   <Text>{keysArrayFormFormatted[index]}:</Text>
-                  <Text>{value}</Text>
+                  <Text>{value instanceof dayjs ? value.format('DD/MM/YYYY') : value}</Text>
                 </InfoDiv>
               );
             })}

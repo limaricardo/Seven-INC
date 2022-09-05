@@ -16,7 +16,7 @@ import { STable, STHead, STHeadTR, STH, STBody, STBodyTR, STD } from "./styles";
 const EmployeeTable = ({ data }) => {
   const [dados, setDados] = useState(data);
   const [showModal, setShowModal] = useState(false);
-  const [emailId, setEmailId] = useState('')
+  const [infoId, setInfoID] = useState('')
 
   const [dataPerPage, setDataPerPage] = useState(15)
   const [currentPage, setCurrentPage] = useState(0)
@@ -41,7 +41,7 @@ const EmployeeTable = ({ data }) => {
 
   const onExpandClick = (obj) => {
     setShowModal(true)
-    setEmailId(obj.email)
+    setInfoID(obj.id)
   }
 
   return (
@@ -58,7 +58,7 @@ const EmployeeTable = ({ data }) => {
         </STHead>
         <STBody>
           {currentDados.map((obj, index) => (
-            <STBodyTR key={index} id={obj["email"]}>
+            <STBodyTR key={index}>
               <STD>{index + customIndex}</STD>
               {keysArrayTable.map((item, index) => {
                 const value = obj[item];
@@ -89,7 +89,7 @@ const EmployeeTable = ({ data }) => {
           ))}
         </STBody>
       </STable>
-      <MoreInfo data={data} emailId={emailId} showModal={showModal} setShowModal={setShowModal} />
+      <MoreInfo data={data} infoId={infoId} showModal={showModal} setShowModal={setShowModal} />
       <PaginationSelector setItensPerPage={setDataPerPage} itensPerPage={dataPerPage} />
       <PaginationComponent currentPage={currentPage} setCurrentPage={setCurrentPage} pages={pages} />
     </>
