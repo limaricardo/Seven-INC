@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# SVN - Sistema de gestão de funcionários 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sobre o projeto
 
-## Available Scripts
+https://seven-front-end.netlify.app/
 
-In the project directory, you can run:
+SVN é uma aplicação front-end web com responsividade para ser acessada por mobile construída durante o processo seletivo para o Grupo Seven.
 
-### `npm start`
+A aplicação consiste em um sistema de gestão de funcionários, onde será possível realizar uma listagem dos funcionários, exibir todas as informações destes, assim como um formulário para criar novos funcionários. Também será possível editar
+funcionários existentes assim como excluí-los.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Requisitos:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Listagem de funcionários, contendo nome, e-mail, telefone, salário e data da contratação;
+- Tela com a exibição dos detalhes de um funcionário
+- Formulário para a criação de um novo funcionário;
+- Formulário para a edição dos dados de um funcionário;
+- Botão para remoção de um funcionário.
 
-### `npm test`
+## Layout responsivo para mobile
+### Página principal                                                                                                
+![Mobile 1](https://user-images.githubusercontent.com/81928006/188368304-281e73c7-38a0-46f9-9bdd-9bc858cea37d.PNG) 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Informações detalhadas do Funcionário 
+![Mobile 2](https://user-images.githubusercontent.com/81928006/188368390-117caf28-d124-481e-934f-12a578fd6200.PNG) 
 
-### `npm run build`
+### Cadastro de novo funcionário                                                                                   
+![Mobile 3](https://user-images.githubusercontent.com/81928006/188368499-72771821-420b-41e6-89ed-c3430f722bd9.PNG) 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Tela para editar informações do usuário + Notificação Toastify
+![Mobile 4](https://user-images.githubusercontent.com/81928006/188368559-20552b8e-e66d-4103-9eec-8042bd89d1ba.PNG)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Layout web
+### Página principal
+![image](https://user-images.githubusercontent.com/81928006/188366610-1fd89a09-0694-47e3-a9fa-d655f6fbb652.PNG)
+### Páginação - (Segunda página da tabela)
+![image](https://user-images.githubusercontent.com/81928006/188366705-96d2293d-bd45-41f9-9597-20b9922edf00.PNG)
+### Tela de cadastro - (Botão 'disabled' com validação do form)
+![image](https://user-images.githubusercontent.com/81928006/188366777-099e1ad4-a74b-4667-a6ef-104c8ca33682.PNG)
+### Notificação Toastify - Usuário cadastrado com sucesso
+![image](https://user-images.githubusercontent.com/81928006/188366853-630684ff-427c-4c6e-b46b-c174f7249a42.PNG)
+### Informações detalhadas do funcionário
+![image](https://user-images.githubusercontent.com/81928006/188367060-6d8f249d-f8ba-4a8e-a68a-841899718b25.PNG)
+### Tela para editar informações do usuário - (Botão validado + Notificação Toastify)
+![image](https://user-images.githubusercontent.com/81928006/188367259-a796c8d9-b511-4b99-b28f-6f7946f85741.PNG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Front end
+- HTML / CSS / JS / 
+- ReactJS
+- MaterialUI
+- Styled Components
+- Formik
+- React Toastify
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Implantação em produção
+- Front end web: Netlify
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Front end web
+Pré-requisitos: npm / yarn
 
-## Learn More
+```bash
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# clonar repositório
+git clone https://github.com/limaricardo/Seven-INC
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+# instalar dependências do projeto, caso necessário:
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm i @date-io/dayjs dayjs
+npm i @emotion/react @emotion/styled
+npm i @mui/icons-material @mui/material @mui/styled-engine-sc @mui/x-date-pickers
+npm i formik
+npm i react-router-dom
+npm i styled-components
+npm i yup
+npm i react-toastify
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+# executar o projeto
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Autor
 
-### Advanced Configuration
+Ricardo Pereira Lima
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://www.linkedin.com/in/ricardo-pereira-274b22aa/
