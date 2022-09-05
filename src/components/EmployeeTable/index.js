@@ -36,6 +36,7 @@ const EmployeeTable = ({ data }) => {
     if (index >= 0) {
       setDados(dados.filter((item, i) =>  i !== customIndex + index - 1));
     }
+
   };
 
   const onExpandClick = (obj) => {

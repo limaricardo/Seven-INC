@@ -2,7 +2,7 @@ import React from 'react'
 import EmployeeTable from '../../components/EmployeeTable';
 import { TableContainer } from './styles';
 
-const AllEmployees = ({data}) => {
+const AllEmployees = ({data }) => {
   return (
     <div>
       <TableContainer>

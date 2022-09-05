@@ -18,14 +18,12 @@ function FormComp({ initialValues, legend, children, schema, toastText, ...props
     let employeeIndex;
 
     if (values?.id) {
-      console.log(values.id)
       employeeIndex = dataMock.findIndex(item => item.id === values.id);
-      console.log(employeeIndex)
       if (employeeIndex >= 0)
         dataMock[employeeIndex] = values;
     }
 
-    if (employeeIndex < 0) {
+    if (!employeeIndex && employeeIndex !== 0) {
       dataMock.push({
         id: +(dataMock[dataMock.length - 1]?.id || 1) + 1,
         ...values
