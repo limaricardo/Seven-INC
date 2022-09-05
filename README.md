@@ -18,11 +18,17 @@ Requisitos:
 - Botão para remoção de um funcionário.
 
 ## Layout responsivo para mobile
-### Página principal                                                                                               ### Informações detalhadas do Funcionário  
-![Mobile 1](https://user-images.githubusercontent.com/81928006/188368304-281e73c7-38a0-46f9-9bdd-9bc858cea37d.PNG) ![Mobile 2](https://user-images.githubusercontent.com/81928006/188368390-117caf28-d124-481e-934f-12a578fd6200.PNG) 
+### Página principal                                                                                                
+![Mobile 1](https://user-images.githubusercontent.com/81928006/188368304-281e73c7-38a0-46f9-9bdd-9bc858cea37d.PNG) 
 
-### Cadastro de novo funcionário                                                                                   ### Tela para editar informações do usuário + Notificação Toastify
-![Mobile 3](https://user-images.githubusercontent.com/81928006/188368499-72771821-420b-41e6-89ed-c3430f722bd9.PNG) ![Mobile 4](https://user-images.githubusercontent.com/81928006/188368559-20552b8e-e66d-4103-9eec-8042bd89d1ba.PNG)
+### Informações detalhadas do Funcionário 
+![Mobile 2](https://user-images.githubusercontent.com/81928006/188368390-117caf28-d124-481e-934f-12a578fd6200.PNG) 
+
+### Cadastro de novo funcionário                                                                                   
+![Mobile 3](https://user-images.githubusercontent.com/81928006/188368499-72771821-420b-41e6-89ed-c3430f722bd9.PNG) 
+
+### Tela para editar informações do usuário + Notificação Toastify
+![Mobile 4](https://user-images.githubusercontent.com/81928006/188368559-20552b8e-e66d-4103-9eec-8042bd89d1ba.PNG)
 
 ## Layout web
 ### Página principal
