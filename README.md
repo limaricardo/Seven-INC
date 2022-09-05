@@ -11,11 +11,11 @@ funcionários existentes assim como excluí-los.
 
 Requisitos:
 
-• Listagem de funcionários, contendo nome, e-mail, telefone, salário e data da contratação;
-• Tela com a exibição dos detalhes de um funcionário
-• Formulário para a criação de um novo funcionário;
-• Formulário para a edição dos dados de um funcionário;
-• Botão para remoção de um funcionário.
+- Listagem de funcionários, contendo nome, e-mail, telefone, salário e data da contratação;
+- Tela com a exibição dos detalhes de um funcionário
+- Formulário para a criação de um novo funcionário;
+- Formulário para a edição dos dados de um funcionário;
+- Botão para remoção de um funcionário.
 
 ## Layout responsivo para mobile
 ### Página principal                                                                                               ### Informações detalhadas do Funcionário  
