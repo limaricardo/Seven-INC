@@ -9,7 +9,7 @@ export const STable = styled.table`
   border-radius: ${v.borderRadius};
   overflow: hidden;
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 900px) {
     display: flex;
     justify-content: center;
     border-radius: 0px;
@@ -21,7 +21,7 @@ export const STHead = styled.thead`
   position: sticky;
   z-index: 100;
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 900px) {
     display: block;
   }
 `;
@@ -30,7 +30,7 @@ export const STHead = styled.thead`
 export const STHeadTR = styled.tr`
   background: ${({ theme }) => theme.bg};
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 900px) {
     display: block;
     margin: 0 0 1rem 0;
 
@@ -49,15 +49,16 @@ export const STH = styled.th`
   font-weight: 600;
   font-size: 14px;
 
-  :not(:last-of-type) {
+  &:not(:last-of-type) {
     border-right: 1px solid ${({ theme }) => theme.bg2};
   }
-  :first-of-type {
+
+  &:first-of-type {
     width: 30px;
     white-space: nowrap;
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 900px) {
     display: block;
   }
 `;
@@ -65,7 +66,7 @@ export const STH = styled.th`
 
 export const STBody = styled.tbody`
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 900px) {
     display: block;
   }
 `;
@@ -74,7 +75,7 @@ export const STBody = styled.tbody`
 export const STBodyTR = styled.tr`
   background: ${({ theme }) => theme.white};
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 900px) {
     display: block;
     margin: 0 0 1rem 0;
   }
@@ -86,7 +87,7 @@ export const STD = styled.td`
   border: 1px solid ${({ theme }) => theme.bg2};
   font-size: 14px;
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 900px) {
     display: block;
     font-size: .9rem;
 
@@ -94,7 +95,7 @@ export const STD = styled.td`
     border: none;
     border-bottom: 1px solid #eee;
     position: relative;
-    padding-left: 120px;
+    padding-left: 150px;
     height: 40px;
 
     &:nth-of-type(1):before{

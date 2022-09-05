@@ -48,7 +48,7 @@ const EmployeeTable = ({ data }) => {
       <STable>
         <STHead>
           <STHeadTR>
-            {["#", ...keysArrayTableFormatted, "Mais Info", "Editar", "Deletar"].map(
+            {["#", ...keysArrayTableFormatted, "Detalhes", "Editar", "Deletar"].map(
               (item, index) => (
                 <STH key={index}>{item}</STH>
               )

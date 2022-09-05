@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
 import EditForm from "../../components/EditForm";
 import { EditContainer } from "./styles";
 import { useParams } from "react-router-dom";
@@ -14,7 +13,6 @@ const EditEmployee = () => {
   
   return (
     <>
-      <Navbar />
       <EditContainer>
         <EditForm employee={employee} />
       </EditContainer>

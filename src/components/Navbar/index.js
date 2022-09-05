@@ -9,7 +9,7 @@ const Navbar = () => {
       <Header>
         <Nav>
           <Link to="/"><Image src={logo} alt="Logo from Seven Company" /></Link>
-          <DivNav>
+          <DivNav className="div-nav">         
             <Link to="/">Lista</Link>
             <Link to="/create">Cadastrar</Link>
           </DivNav> 

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import { Formik, Form } from "formik";
 import "./styles.js";
 
@@ -7,25 +8,38 @@ import Button from "../Button";
 import ViewsDatePicker from "../DatePicker";
 import { keysArrayForm, dataMock } from "../../Mock";
 import { FieldContainer, ButtonContainerDiv } from "./styles.js";
+import { toast } from "react-toastify"
 
-function FormComp({ initialValues, legend, children, schema, ...props }) {
+function FormComp({ initialValues, legend, children, schema, toastText, ...props }) {
+
+  const navigate = useNavigate();
   
   function onSubmit(values, actions) {
-    console.log(values)
     let employeeIndex;
 
     if (values?.id) {
+      console.log(values.id)
       employeeIndex = dataMock.findIndex(item => item.id === values.id);
-      if (employeeIndex)
+      console.log(employeeIndex)
+      if (employeeIndex >= 0)
         dataMock[employeeIndex] = values;
     }
 
-    if (!employeeIndex) {
+    if (employeeIndex < 0) {
       dataMock.push({
         id: +(dataMock[dataMock.length - 1]?.id || 1) + 1,
         ...values
       });
     }
+
+    toast.success(toastText, {
+        position: toast.POSITION.TOP_CENTER,
+      });
+
+    setTimeout(() => {
+      navigate('/')
+    }, 2000)
+    
   }
 
   return (
@@ -40,7 +54,7 @@ function FormComp({ initialValues, legend, children, schema, ...props }) {
         {({ isValid, setFieldValue }) => (
           <FieldContainer>
             <Form
-              style={{ width: "100%", padding: "25px", textAlign: "center" }}
+              style={{ width: "100%", padding: "20px", textAlign: "center" }}
             >
               <h2>{props.title}</h2>
               {keysArrayForm.map((key, index) => {

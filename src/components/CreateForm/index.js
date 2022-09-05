@@ -15,7 +15,7 @@ const initialValues = {
 const CreateForm = () => {
   return (
     <div>
-      <FormComp initialValues={initialValues} title={"Cadastro de funcionário"}  legend={"* - Preencher campo obrigatório."} schema={schema}>Criar</FormComp>
+      <FormComp initialValues={initialValues} title={"Cadastro de funcionário"}  legend={"* - Preencher campo obrigatório."} schema={schema} toastText={"Novo Funcionário cadastrado com sucesso!"}>Criar</FormComp>
     </div>
   )
 }
